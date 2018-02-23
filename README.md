@@ -6,7 +6,7 @@ From local file:
 $ crop original.png 1920 1080
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 1920x1080
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/original_1920x1080.png
+📁 Resized image saved to: original_1920x1080.png
 ```
 
 From web:
@@ -89,32 +89,32 @@ Now, when running the script, it will automatically generate all images at once.
 $ ./generate-appletv-images.sh original.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 2320x720
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/TopShelf_Wide.jpg
+📁 Resized image saved to: TopShelf_Wide.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 4640x1440
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/TopShelf_Wide@2x.jpg
+📁 Resized image saved to: TopShelf_Wide@2x.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 1920x720
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/TopShelf.jpg
+📁 Resized image saved to: TopShelf.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 3840x1440
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/TopShelf@2x.jpg
+📁 Resized image saved to: TopShelf@2x.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 1280x768
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/AppIcon_AppStore.jpg
+📁 Resized image saved to: AppIcon_AppStore.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 2560x1536
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/AppIcon_AppStore@2x.jpg
+📁 Resized image saved to: AppIcon_AppStore@2x.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 400x240
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/AppIcon_Small.jpg
+📁 Resized image saved to: AppIcon_Small.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 800x480
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/AppIcon_Small@2x.jpg
+📁 Resized image saved to: AppIcon_Small@2x.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 1920x1080
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/Launch_Image.jpg
+📁 Resized image saved to: Launch_Image.jpg
 🏙 Original image size: 4284x2844
 🏙 Resized image size: 3840x2160
-📁 Resized image saved to: /Users/enekoalonso/dev/eneko/crop/Launch_Image@2x.jpg
+📁 Resized image saved to: Launch_Image@2x.jpg
 ```
