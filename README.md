@@ -45,7 +45,7 @@ Download the latest release and save in a folder in your executable path,
 for example on `/usr/local/bin`:
 
 ```
-$ curl -O https://github.com/eneko/crop/releases/crop-0.0.1.zip
+$ curl -O https://github.com/eneko/crop/releases/download/0.0.1/crop.zip
 $ unzip crop.zip
 $ install -d /usr/local/bin
 $ install -C -m 755 crop /usr/local/bin/crop
