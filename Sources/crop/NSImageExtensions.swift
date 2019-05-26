@@ -29,13 +29,39 @@ extension NSImage {
     /// - Parameter size: The size to resize the image to.
     /// - Returns: The resized image.
     func resize(to targetSize: CGSize) -> NSImage? {
-        let frame = CGRect(x: 0, y: 0, width: targetSize.width, height: targetSize.height)
-        guard let representation = bestRepresentation(for: frame, context: nil, hints: nil) else {
+//        let frame = CGRect(x: 0, y: 0, width: targetSize.width, height: targetSize.height)
+//        guard let representation = bestRepresentation(for: frame, context: nil, hints: nil) else {
+//            return nil
+//        }
+//        let image = NSImage(size: targetSize, flipped: false, drawingHandler: { (_) -> Bool in
+//            return representation.draw(in: frame)
+//        })
+
+        // Resize to exact pixel size discarding screen scale
+        let rep = NSBitmapImageRep(bitmapDataPlanes: nil,
+                                   pixelsWide: Int(targetSize.width),
+                                   pixelsHigh: Int(targetSize.height),
+                                   bitsPerSample: 8,
+                                   samplesPerPixel: 4,
+                                   hasAlpha: true,
+                                   isPlanar: false,
+                                   colorSpaceName: .calibratedRGB,
+                                   bytesPerRow: 0,
+                                   bitsPerPixel: 0)
+        guard let representation = rep else {
             return nil
         }
-        let image = NSImage(size: targetSize, flipped: false, drawingHandler: { (_) -> Bool in
-            return representation.draw(in: frame)
-        })
+        representation.size = targetSize
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: representation)
+        draw(in: NSRect(x: 0, y: 0, width: targetSize.width, height: targetSize.height),
+             from: .zero,
+             operation: .copy,
+             fraction: 1.0)
+        NSGraphicsContext.restoreGraphicsState()
+
+        let image = NSImage(size: NSSize(width: targetSize.width, height: targetSize.height))
+        image.addRepresentation(representation)
         return image
     }
 
@@ -53,6 +79,7 @@ extension NSImage {
     }
 
     // MARK: Cropping
+
     /// Resize the image, to nearly fit the supplied cropping size
     /// and return a cropped copy the image.
     ///
